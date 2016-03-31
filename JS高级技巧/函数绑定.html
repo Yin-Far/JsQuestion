@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数绑定</title>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="btn">BUtton</div>
+	<script type="text/javascript">
+	    var handle = {
+	    	msg:"hello world",
+	    	handleClick:function (event){
+	    		alert(this.msg);
+	    	}
+	    };
+	    var oBtn = document.getElementById("btn");
+	    EventUtil.addHandler(oBtn,'clcik',handle.handleClick);
+	</script>
+</body>
+</html>

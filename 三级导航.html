@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三级导航</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		.list{
+			background: blue;
+			height: 60px;
+			line-height: 60px;
+			width: 100%;
+		}
+		.list li{
+			width:100px; 
+			float: left;
+			position: relative;
+		}
+		.list li a{
+			color:#000;
+		}
+		.list li ul{
+			display: none;
+		}
+		.list li:hover ul{
+		    display:block;
+		    width:100px;
+		    position:absolute;
+		    top:60px;
+		    left:0;
+		    background: #ccc;
+		}
+		.list li:hover li a{
+		    display:block;
+		    width:100px;
+		    height:60px;
+		    line-height:60px;
+		    text-align:center;
+		}
+		.list li:hover ul li a:hover{
+		    background-color:orange;
+		}
+		.list li:hover ul li ul{
+			display: none;
+		}
+		.list li:hover ul li:hover ul{ 
+		    display:block; 
+		    width:100px; 
+		    position:absolute; 
+		    top:0px; 
+		    left:100px;
+		    background-color:#b4b4b4;
+		}
+		.list li:hover ul li:hover ul li { 
+		    width:100px; 
+		    height:60px; 
+		}
+		.list li:hover ul li:hover ul li a { 
+		    display:block; 
+		    width:100px; 
+		    height:60px; 
+		    line-height:60px;  
+		    text-align:center; 
+		}
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li>
+			<a href="javascript:;">一级导航</a>
+			<ul class="list2">
+				<li>
+					<a href="javascript:;">二级导航</a>
+					<ul class="list3">
+						<li><a href="javascript:;">三级导航</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:;">二级导航</a></li>
+			</ul>
+		</li>
+		<li><a href="javascript:;">一级导航</a></li>
+		<li><a href="javascript:;">一级导航</a></li>
+		<li><a href="javascript:;">一级导航</a></li>
+	</ul>
+</body>
+</html>

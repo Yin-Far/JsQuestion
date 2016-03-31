@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>构造函数模式</title>
+</head>
+<body>
+	<script>
+	/*this指向create，argumets.length=3*/
+	function create(name,age,jobs){
+		this.name = name;
+		this.age = age;
+		this.jobs = jobs;
+		this.set = function(){
+			alert(this.name);
+		}
+	}
+	/*因为new的新对象是create，可以知道this指向create*/
+	var per1 = new create('dede','23','code');
+	var per2 = new create('derf','233','co3333de');
+	</script>
+
+</body>
+</html>

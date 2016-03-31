@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<title>录入新试卷--</title>
+	<style type="text/css">
+		#loader{
+			padding:0;
+			margin:0;
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			background:#9099ae;
+			z-index:999;
+			font-size:1.2em;
+			line-height:1.5em;
+			vertical-align:center
+			}
+		#loaderInner{
+			padding:5px;
+			position:relative;
+			left:0;
+			top:0;
+			width:175px;
+			background:#8c8;
+			color:#fff
+			}
+		</style>
+
+	<link rel="stylesheet" href="http://img.examcoo.com/themes/metro/v6_k.css" type="text/css">
+	<!--<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="build-edit" src="./js/build-edit.js"></script>-->
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="http://img.examcoo.com/js/1285/libs/jquery.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ajax" src="./library/jquery/1285/ajax.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main-edit" src="http://img.examcoo.com/js/1285/meditor/main.edit.js"></script>
+	
+	
+</head>
+<body>
+	<div id="loader" style="display: none;">
+    <div id="loaderInner">正在载入试卷 ...</div>
+</div>
+ <script type="text/javascript">
+		var showTips = true ;</script>
+<div id="desk" class="editDesk2">
+    <div id="topBar">
+        <div id="navibar">
+            <div class="naviTitle">
+                <img src="http://img.examcoo.com/themes/metro/images/v1_3q.gif" width="14" height="22" class="imglinehead">录入新试卷</div><span class="naviState">考试酷<span class="notvisibleon600"> > 计算机类</span><span class="notvisibleon600"> > 专业技术初级资格考试</span> > 程序员应用技术试卷</span>
+        </div>
+    </div>
+    <div id="center" class="hasPadding">
+        <div id="webEditor">
+            <div id="toolBar">
+                <div id="cmd_mainMenu" class="toolbar-btn unselectable" title="功能菜单" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-mainMenu">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                    <div class="btn-icon-downArrow">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div class="toolbar-separator unselectable" tabindex="-1">
+                    <div class="btn-icon-separator"></div>
+                </div>
+                <div id="cmd_block" class="toolbar-btn unselectable" title="插入文本行 <前插>
+ 
+它既可以是试卷内的分段标记、或者非试题部分的普通文字，也可以是类似阅读理解这种套题的主题干部分的文字" tabindex="-1">
+                    <div class="questionIcon btn-icon-block">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_q1" class="toolbar-btn unselectable" title="插入单选题 <后插>" tabindex="-1">
+                    <div class="questionIcon btn-icon-q1">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_q2" class="toolbar-btn unselectable" title="插入多选题 <后插>" tabindex="-1">
+                    <div class="questionIcon btn-icon-q2">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_q3" class="toolbar-btn unselectable" title="插入判断题 <后插>" tabindex="-1">
+                    <div class="questionIcon btn-icon-q3">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_q4" class="toolbar-btn unselectable" title="插入填空题 <后插>" tabindex="-1">
+                    <div class="questionIcon btn-icon-q4">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_q5" class="toolbar-btn unselectable" title="插入文字题 <后插>
+ 
+例如简答、计算、分析、问答等主观题" tabindex="-1">
+                    <div class="questionIcon btn-icon-q5">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_q100" class="toolbar-btn unselectable" title="插入具有随机选题功能的智能组卷规则 <后插>" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-q100">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div class="toolbar-separator unselectable" tabindex="-1">
+                    <div class="btn-icon-separator"></div>
+                </div>
+                <div id="cmd_part" class="toolbar-btn unselectable command-disable" title="设置分段标记" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-part">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_blankField" class="toolbar-btn unselectable command-disable" title="插入/编辑填空区" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-blankField">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_table" class="toolbar-btn unselectable command-disable" title="插入/编辑表格" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-table">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_image" class="toolbar-btn unselectable command-disable" title="插入/编辑图像" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-image">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_underline" class="toolbar-btn unselectable command-disable" title="下划线" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-underline">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_subscript" class="toolbar-btn unselectable command-disable" title="下标" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-subscript">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_superscript" class="toolbar-btn unselectable command-disable" title="上标" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-superscript">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div class="toolbar-separator unselectable" tabindex="-1">
+                    <div class="btn-icon-separator"></div>
+                </div>
+                <div id="cmd_moveUp" class="toolbar-btn unselectable command-disable" title="上移" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-moveUp">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_moveDown" class="toolbar-btn unselectable command-disable" title="下移" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-moveDown">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div id="cmd_delete" class="toolbar-btn unselectable" title="删除" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-delete">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+                <div class="toolbar-separator unselectable" tabindex="-1">
+                    <div class="btn-icon-separator"></div>
+                </div>
+                <div id="cmd_moreTools" class="toolbar-btn unselectable" title="更多功能" tabindex="-1">
+                    <div class="webEditorIcon btn-icon-moreTools">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                    <div class="btn-icon-downArrow">
+                        <input type="button" class="dijitReset" tabindex="-1">
+                    </div>
+                </div>
+            </div>
+            <div id="paperContent" class="fontSimsum" style="height: 32px;">
+                <div id="paperName" role="papername" class="paperName isEmpty" data-valid="false" contenteditable="true">
+                    <br class="bogusBR">
+                </div>
+                <div class="infoPane" id="infoPane">
+                    <div id="pid">试卷编号：</div>
+                    <div>录入者　：DEMO</div>
+                    <div id="totalpoint">试卷总分：0</div>
+                    <div>出卷时间：<span id="saveTime"></span>
+                    </div>
+                    <div class="limitedTimePane" id="limitedTimePane">
+                        <div class="limitedTimeLabel">答题时间（分钟）：</div>
+                        <div id="limitedTime" contenteditable="true" data-valid="true" class="limitedTime isEmpty">
+                            <br class="bogusBR">
+                        </div>
+                    </div>
+                </div>
+                <div id="hr"> </div>
+                <div id="b1" class="blockContainer" contenteditable="true">
+                    <div class="blockBox contentsEmpty " title="" data-role="ending">
+                        <br class="bogusBR">
+                    </div>
+                </div>
+            </div>
+            <div id="controlPane">
+                <div id="controlBar">
+                    <div id="cmd_editValidate" class="toolbar-btn unselectable btn-hasText" title="检查" tabindex="-1">
+                        <div class="webEditorIcon btn-icon-editValidate">
+                            <input type="button" class="dijitReset" tabindex="-1">
+                        </div>
+                        <div class="buttonText">检查</div>
+                    </div>
+                    <div id="cmd_editCalculate" class="toolbar-btn unselectable btn-hasText" title="总分" tabindex="-1">
+                        <div class="webEditorIcon btn-icon-editCalculate">
+                            <input type="button" class="dijitReset" tabindex="-1">
+                        </div>
+                        <div class="buttonText">总分</div>
+                    </div>
+                    <div id="cmd_editPreview" class="toolbar-btn unselectable btn-hasText" title="预览" tabindex="-1">
+                        <div class="webEditorIcon btn-icon-editPreview">
+                            <input type="button" class="dijitReset" tabindex="-1">
+                        </div>
+                        <div class="buttonText">预览</div>
+                    </div>
+                    <div id="cmd_editSave" class="toolbar-btn unselectable btn-hasText" title="保存" tabindex="-1">
+                        <div class="webEditorIcon btn-icon-editSave">
+                            <input type="button" class="dijitReset" tabindex="-1">
+                        </div>
+                        <div class="buttonText">保存</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script data-main="http://img.examcoo.com/js/1285/meditor/build-edit" src="http://img.examcoo.com/js/1285/libs/require.js"></script>
+<script>
+	
+</script>
+</body>
+</html>

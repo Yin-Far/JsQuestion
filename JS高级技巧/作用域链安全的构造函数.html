@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scope chain</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function person(name,job,age){
+			if(this instanceof person){
+				this.name = name;
+				this.age = age;
+				this.job = job;
+			}else{
+				return new person (name,job,age);
+			}
+		}
+		//防止this指向全局window
+		var p1 = person("hhh","coder","11");
+		console.log(window.name);
+		console.log(p1.name);
+
+		var p2 = new person("ccc","worger","33");
+		console.log(p2.name);
+	</script>
+</body>
+</html>
