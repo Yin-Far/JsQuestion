@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>原生拖拽</title>
+	<style>
+		#div1{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+	<script src="EventUtil.js"></script>
+	<script type="text/javascript">
+		
+		EventUtil.addHandler(document,"mousemove",function(event){
+			var oDiv = document.getElementById("div1");
+			oDiv.style.left = event.clientX  + 'px';
+			oDiv.style.top = event.clientY + 'px';
+		});
+	</script>
+</body>
+</html>

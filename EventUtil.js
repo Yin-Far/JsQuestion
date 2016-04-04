@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>跨浏览器事件对象</title>
-</head>
-<body>
-	<script type="text/javascript">
-		var EventUtil = {
+var EventUtil = {
 			addHandler:function(element,type,handle){
 				if(element.addEventListener){
 					element.addEventListener(type,handle,false);
@@ -28,7 +21,7 @@
 			getEvent:function(event){
 				return event ? event:window.event;
 			},
-			//返回事件目标
+			//返回事件的目标节点或者触发该事件的节点
 			getTarget:function(event){
 				return event.target || event.srcElement;
 			},
@@ -49,6 +42,3 @@
 				}
 			}
 		}
-	</script>
-</body>
-</html>
