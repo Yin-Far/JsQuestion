@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promise-2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//异步加载图片
+		function loadImageAsync(url){
+			return new Promise(function(resolve,reject){
+				var image = new Image();
+
+				image.onload = function(){
+					resolve(image);
+				};
+				image.onerror = function(){
+					//通过reject Error方法抛出一个内部错误
+					reject(new Error("Error!!!"+ url));
+				};
+				image.src=url;
+			});
+		};
+		loadImageAsync('http://7xospr.com1.z0.glb.clouddn.com/Blog_Fill_Bg.png');
+	</script>
+</body>
+</html>

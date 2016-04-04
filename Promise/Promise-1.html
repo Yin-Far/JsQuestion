@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promise-1</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//当状态由pending变为resolve的时候执行then方法绑定的回调函数
+		function timeout(ms){
+			return new Promise(function(resolve,reject){
+				setTimeout(resolve,ms,'done');
+			});
+		}
+		timeout(1000).then((value)=>{
+			console.log(value);
+		});
+	</script>
+</body>
+</html>
