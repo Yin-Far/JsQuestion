@@ -7,17 +7,22 @@
 //使用混合模式创建自定义类型对象
 function EventTarget(){
 	//handler 用于储存事件处理程序
-	this.handler = {};
+	this.handle = {};
 }
 EventTarget.prototype = {
 	constructor:EventTarget,
 	//注册自定义事件
 	addHandler:function(type,handler){
-		
+		if(typeof this.handle[type] == 'undefined'){
+			this.handle[type] = [];
+		}
+		this.handle[type].push(handler);
 	},
 	//触发自定义事件
-	trigger:function(type,handler){
-
+	trigger:function(event){
+		if(!event.target){
+			event.target = this;
+		}
 	},
 	//移除自定义事件
 	removeHandler:function(type,handler){

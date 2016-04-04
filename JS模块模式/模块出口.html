@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>模块出口</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var module = (function(){
+			//内部闭包
+			var info = {},
+				privateV = 1;
+			function privateM(){
+				alert("hello world");
+			};
+			// privateM();//hello world
+			info.modulePro = 2;
+			info.moduleM = function(){
+				alert("moduleM");
+			};
+			return info;
+		}());
+		// module.privateM();//error
+		// module.moduleM(); //moduleM
+	</script>
+</body>
+</html>
