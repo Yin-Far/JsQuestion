@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>工厂模式</title>
+</head>
+<body>
+
+<script>
+window.onload = function(){
+	function createPerson(job,name,age){
+		var per = new Object();
+		per.name = name;
+		per.age = age;
+		per.job = job;
+		per.set = function(){
+			alert(this.name);//this全局(windows);
+		}
+		return per;
+	};
+	var per1 = createPerson('code','ddemo','23');
+	var per2 = createPerson('home','demoo','22');
+}
+	
+</script>
+</body>
+</html>

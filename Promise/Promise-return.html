@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promise-return</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var foo1 = new Promise((resolve,reject)=>{
+			setTimeout(()=>reject(new Error("error")),3000)
+		})
+		var foo2 = new Promise((resolve,reject)=>{
+			setTimeout(()=>resolve(foo1),1000);
+		})
+		foo2.then(result =>
+			console.log(result)
+		);
+		foo2.catch(function(error){
+			return console.log(error)
+		});
+	</script>
+</body>
+</html>
