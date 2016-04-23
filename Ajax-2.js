@@ -16,6 +16,7 @@ Ajax = function(){
 		xhr.onreadystatechange = function(xhr,success,failure){
 			_onreadystatechange(xhr,success,failure);
 		};
+		// xhr.setRequestHeader("x-Content-Security-Policy;","default-src");
 		xhr.open(method,url,async);
 		if(method == 'GET'&&data){
 			url += (url.indexOf('?')==-1?'?':'&')+data;

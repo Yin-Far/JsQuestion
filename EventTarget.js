@@ -13,6 +13,7 @@ EventTarget.prototype = {
 	constructor:EventTarget,
 	//注册自定义事件
 	addHandler:function(type,handler){
+
 		if(typeof this.handle[type] == 'undefined'){
 			this.handle[type] = [];
 		}
@@ -23,9 +24,23 @@ EventTarget.prototype = {
 		if(!event.target){
 			event.target = this;
 		}
+		if(this.handle[event.type] instanceof Array){
+			var handle = this.handle[event.type];
+			for(var i = 0;i<handle.length;i++){
+				handle[i](event);
+			}
+		}
 	},
 	//移除自定义事件
 	removeHandler:function(type,handler){
-
+		if(this.handle[type] instanceof Array){
+			var handle = this.handle[type];
+			for(var i = 0;i<handle.length;i++){
+				if(handle[i] === handler){
+					break;
+				}
+			}
+			handle.splice(i,1);
+		}
 	}
 };

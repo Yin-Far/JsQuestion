@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件代理</title>
+</head>
+<body>
+	<ul id="parent">
+		<li><a href="http://www.baidu.com">bbb</a></li>
+		<li><a href="http://www.bing.com">sss</a></li>
+		<li><a href="http://www.google.com">aaa</a></li>
+	</ul>
+	<div id="log"></div>
+	<script type="text/javascript">
+		var oParent = document.getElementById('parent'),
+			log = document.getElementById('log');
+		oParent.addEventListener("mouseover",show,false);
+		function show(ev){
+			var oTarget = ev.target;
+			if(oTarget.tagName ==='A'){
+				log.innerHTML = "连接" + oTarget.href;
+			}
+			if(oTarget.tagName === 'LI'){
+				log.innerHTML = "LI";
+			}
+			if(oTarget.tagName === 'UL'){
+				log.innerHTML = 'ul';
+			}
+		}
+	</script>
+</body>
+</html>

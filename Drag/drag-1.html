@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>点击变换</title>
+	<style>
+		.ball{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #BEFA3A;
+			border-radius: 10px;
+		}
+		.smooth{
+			transition: .5s;
+		}
+	</style>
+</head>
+<body>
+	<div class="ball smooth"></div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBall = document.querySelector('.ball'),
+				offset = oBall.offsetWidth / 2;
+			document.addEventListener('click',function(ev){
+				oBall.style.left = (ev.clientX-offset)+'px';
+				oBall.style.top = (ev.clientY-offset)+'px';
+			},false);
+		}
+	</script>
+</body>
+</html>

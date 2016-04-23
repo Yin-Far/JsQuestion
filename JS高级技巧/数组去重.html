@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组去重</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function norepeat(arr){
+			var ret = [];
+			var hash = {};
+			for(var i = 0;i<arr.length;i++){
+				var value = arr[i];
+				var key = value;
+				if(hash[key]!=true){
+					ret.push(value);
+					hash[key] = true;
+				} 
+			}
+			return ret;
+		}
+		var a = [false,true,null,{},{},0,'a','a',0,1,NaN,undefined];
+		console.log(norepeat(a));
+	</script>
+</body>
+</html>
