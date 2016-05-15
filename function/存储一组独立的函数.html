@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var store = {
+			nextId:1,
+			cache:{},//设置函数缓存
+			add:function(fn){
+				if(!fn.id){
+					fn.id = store.nextId++;
+					return !!(store.cache[fn.id]=fn);//'!!'将任意的jS表达式转换为等效boolean值的方式
+				}
+			}
+		}
+		console.profile('性能分析器一');
+		function far(){};
+
+		console.trace(store.add(far),"function is added");
+		console.trace(!store.add(far),"function once");
+		console.profileEnd();
+	</script>
+</body>
+</html>

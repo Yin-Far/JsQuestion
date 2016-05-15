@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function norepeat(arr){
+			var hash = {};
+			var ret = [];
+			for(var i=0;i<arr.length;i++){
+				var value = arr[i];
+				var key = value;
+				if(hash[key]!=true){
+					ret.push(value);
+					hash[key]=true;
+				}
+			}
+			return ret;
+		}
+		var a = [undefined,"hello",1,0,3,{},1,true,NaN,{},false,true];
+		console.log(norepeat(a));
+	</script>
+</body>
+</html>

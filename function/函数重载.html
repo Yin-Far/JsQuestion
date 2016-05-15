@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		/**
+		* @param obj 要绑定方法的对象
+		* @param name 要绑定的方法需要的属性名称
+		* @param fn 要绑定的方法
+		*/
+		function addMethod(obj,name,fn){
+			var oldMethod = obj[name];
+			obj[name] = function(){
+				if(fn.length==arguments.length){
+					return fn.apply(this,arguments);
+				}else if(typeof oldMethod == 'function'){
+					return oldMethod.apply(this,arguments);
+				}
+			};
+		};
+	</script>
+</body>
+</html>

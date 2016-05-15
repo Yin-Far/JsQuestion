@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	/*
+	* 在下面这个方法中会输出10个10因为在函数调用的时候调用的不是closure对象，而是一个匿名函数
+	*/
+		function create(){
+			var res = new Array();
+			for(var i = 0;i<10;i++){
+				res[i] = function(num){
+					return function(){
+						return num;
+					}//use closure object
+				}(i);
+			}
+			return res;
+		}
+		var foo = create();
+		for(var i = 0;i<foo.length;i++){
+			console.log(foo[i]());
+		}
+	</script>
+</body>
+</html>

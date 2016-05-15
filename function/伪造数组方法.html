@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="first" value="nihao">
+<input type="text" id="second">
+	<script type="text/javascript">
+		var eles = {
+			length:0,
+			add:function(ele){
+				Array.prototype.push.call(this,ele);
+			},
+			get:function(id){
+				this.add(document.getElementById(id));
+			},
+			show:function(ele){
+				Array.prototype.pop.call(this,ele);
+			},
+			info:function(id){
+				this.show(document.getElementById(id));
+			}
+		};
+		eles.get('first');
+		console.trace(eles.length==1 && eles[0].nodeType,"已经入栈");
+		console.log(eles[0].nodeType);//返回1表示为Elements类型
+		eles.info('first');
+		console.trace(eles.length==0,"已经出栈");
+		console.log(eles[0].nodeType);
+
+	</script>
+</body>
+</html>
