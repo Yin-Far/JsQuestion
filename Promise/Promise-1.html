@@ -14,6 +14,19 @@
 		timeout(1000).then((value)=>{
 			console.log(value);
 		});
+		function f(){
+			console.log("aaa");
+			setTimeout(g,0);
+			console.log("bbb");
+			h();
+		}
+		function g(){
+			console.log("ggg");
+		}
+		function h(){
+			console.log("hhh");
+		}
+		f();
 	</script>
 </body>
 </html>

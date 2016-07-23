@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom事件绑定</title>
+</head>
+<body>
+	<div id="div1"><span id="span1">sss</span></div>
+	<script type="text/javascript">
+		var oDiv = document.getElementById("div1");
+		var oSpan = document.getElementById("span1");
+		oSpan.addEventListener("click",function(){alert("span捕获");},true);
+		oSpan.addEventListener("click",function(){alert("span冒泡");},false);
+		oDiv.addEventListener("click",function(){alert("div捕获");},true);
+		oDiv.addEventListener("click",function(){alert("div冒泡");},false);
+	</script>
+</body>
+</html>

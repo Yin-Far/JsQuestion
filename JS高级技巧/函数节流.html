@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+<head>
+	<title>函数节流</title>
+</head>
+<body>
+	<div style="height:6000px;">
+		<div id="demo" style="position:absolute;"></div>
+	</div>
+	<script type="text/javascript">
+		var count = 0;
+		function testFn() { 
+			console.log(count++); 
+		}
+		/*
+		* @param fn 回调函数
+		* @param delay 延迟时间
+		* @param least 至少least之间执行一次
+		*/
+		var throttle = function(fn,delay,least){
+			var timer = null;
+			var pre = null;
+
+			return function(){
+				var now =+ new Date();
+				if(!pre)
+					pre = now;
+				if(least&&now-pre>least){
+					fn();
+					pre = now;
+					clearTimeout(timer);
+				}else{
+					clearTimeout(timer);
+					timer = setTimeout(function(){
+						fn();
+						pre = null;
+					},delay);
+				}
+			}
+		}
+		window.onresize = throttle(testFn,100,500);
+		//throttle被调用后返回的回调函数才是onresize触发的时候需要调用的函数
+	</script>
+</body>
+</html>

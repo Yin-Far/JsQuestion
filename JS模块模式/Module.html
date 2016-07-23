@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Module</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// var myModule = (function(){
+		// 	var module = {};
+		// 	var _privateModule = function(){
+		// 		console.log("private");
+		// 	};
+		// 	module.publicModule = function(){
+		// 		console.log("public_1");
+		// 	};
+		// 	module.otherModule = function(){
+		// 		console.log("public_2");
+		// 	};
+		// 	return module;
+		// })();
+		// myModule._privateModule();//error
+		// myModule.publicModule();//public_1
+		var myModule = (function(){
+			var _privateModule = function(){
+				console.log("private");
+			};
+			var publicModule = function(){
+				console.log("publicModule");
+			};
+			return {
+				publicModule:publicModule
+			}
+		})();
+		myModule.publicModule();
+	</script>
+</body>
+</html>

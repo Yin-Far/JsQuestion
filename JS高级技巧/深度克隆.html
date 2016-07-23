@@ -2,13 +2,38 @@
 <html>
 <head>
 	<title>深度克隆</title>
+	
 </head>
 <body>
 	<script type="text/javascript">
-		Object.prototype.clone = function(){
-			var obj = {};
-
+		function clone(obj){
+		    if(typeof(obj) != 'object') return obj;
+		    var r = Array.prototype.splice === obj.splice ? []:{};
+		    for(var i in obj){
+		        if(obj.hasOwnProperty(i)){
+		            r[i] = clone(obj[i]);
+		        }
+		    }
+		    return r ;
 		}
+		var srcObj = {
+		    a: 1,
+		    b: {
+		        b1: ["hello", "hi"],
+		        b2: "JavaScript"
+		    }
+		};
+		var abObj = srcObj;
+		var tarObj = clone(srcObj);
+
+		srcObj.a = 2;
+		srcObj.b.b1[0] = "Hello";
+
+		console.log(abObj.a);
+		console.log(abObj.b.b1[0]);
+
+		console.log(tarObj.a);      // 1
+		console.log(tarObj.b.b1[0]);    // "hello"
 	</script>
 </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LocalStorge</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.content{
+			width: 800px;
+			margin: 0 auto;
+			border:1px solid #000;
+			height: 300px;
+		}
+		li{
+			list-style: none;
+		}
+		.text,.text1,.text2,.text3{
+			float: left;
+			cursor: pointer;
+			width: 50px;
+			background: #666;
+			height: 300px;
+		}
+		.show{
+			width: 600px;
+			height: 300px;
+			background: skyblue;
+		}
+		.show1,.show2,.show3{
+			display: none;
+			width: 600px;
+			height: 300px;
+			background: skyblue;
+		}
+		.content div{
+			float: left;
+		}
+		.content li{
+			float: left;
+		}
+		.text1{
+			background: #ff0000;
+		}
+		.text2{
+			background: yellow;
+		}
+		.text3{
+			background: blue;
+		}
+		.show1{
+			background: #b35a24;
+		}
+		.show2{
+			background: #2eb97a;
+		}
+		.show3{
+			background: #b3379d;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<ul class="content">
+			<li class="according">
+				<div class="text" id="text"></div>
+				<div class="show" id="show"></div>
+			</li>
+			<li class="according">
+				<div class="text1" id="text1"></div>
+				<div class="show1" id="show1"></div>
+			</li>
+			<li class="according">
+				<div class="text2"></div>
+				<div class="show2"></div>
+			</li>
+			<li class="according">
+				<div class="text3"></div>
+				<div class="show3"></div>
+			</li>
+		</ul>
+	</section>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oText1 = document.getElementById('text1');
+			var oText = document.getElementById('text');
+			var oShow1 = document.getElementById('show1');
+			var oShow = document.getElementById('show');
+
+			oText1.addEventListener("click",function(){
+				oShow1.style.display = 'block';
+				oShow.style.display = 'none';
+			},false);
+			oText.addEventListener("click",function(){
+				oShow1.style.display = 'none';
+				oShow.style.display = 'block';
+			},false);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css三角符号</title>
+	<style type="text/css">
+		#demo {
+		    width:0;
+		    height: 0;
+		    border-width: 20px;
+		    border-style: solid;
+		    border-color: transparent transparent red transparent;
+		}
+		.div1{
+			width: 200px;
+			height: 200px;
+			background: #fff;
+			position: relative;
+			border:1px solid skyblue;
+		}
+		.div1:after,.div1:before{
+			border:solid transparent;
+			content: '';
+			height: 0;
+			left: 100%;
+			position: absolute;
+			width: 0;
+		}
+		.div1:after{
+			border-left-color:#fff; 
+			border-width: 20px;
+			top: 20px;
+		}
+		.div1:before{
+			border-left-color:skyblue; 
+			border-width: 22px;
+			top: 18px;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div id="demo"></div>
+</body>
+</html>
